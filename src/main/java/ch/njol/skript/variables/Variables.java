@@ -240,7 +240,7 @@ public class Variables {
 						constructor.setAccessible(true);
 						variablesStorage = (VariablesStorage) constructor.newInstance(type);
 					} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException e) {
-						Skript.error("Failed to initalize database type '" + type + "'");
+						Skript.exception(e, "Failed to initalize database type '" + type + "'");
 						successful = false;
 						continue;
 					}
